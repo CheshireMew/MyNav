@@ -77,9 +77,9 @@ app.post('/api/login', loginLimiter, async (req, res) => {
 app.get('/api/config/login-path', async (req, res) => {
     try {
         const user = await db.get('SELECT login_path FROM users LIMIT 1');
-        res.json({ login_path: user?.login_path || 'nibeigaile' });
+        res.json({ login_path: user?.login_path || 'login' });
     } catch (err) {
-        res.json({ login_path: 'nibeigaile' });
+        res.json({ login_path: 'login' });
     }
 });
 
@@ -282,7 +282,7 @@ app.put('/api/user', auth, async (req, res) => {
 
         // Direct update for single-user system
         const newUsername = (username && username.trim()) ? username.trim() : user.username;
-        const newLoginPath = (login_path && login_path.trim()) ? login_path.trim() : (user.login_path || 'nibeigaile');
+        const newLoginPath = (login_path && login_path.trim()) ? login_path.trim() : (user.login_path || 'login');
 
         // Hash new password if provided
         let newPassword = user.password;
@@ -665,7 +665,7 @@ async function start() {
 
     // Explicitly check for login_path column in case migration failed
     try {
-        await db.run('ALTER TABLE users ADD COLUMN login_path TEXT DEFAULT "nibeigaile"');
+        await db.run('ALTER TABLE users ADD COLUMN login_path TEXT DEFAULT "login"');
     } catch (e) {
         // Column likely exists
     }

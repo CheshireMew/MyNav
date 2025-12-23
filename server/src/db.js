@@ -13,7 +13,7 @@ async function setupDb() {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT UNIQUE,
             password TEXT,
-            login_path TEXT DEFAULT 'nibeigaile'
+            login_path TEXT DEFAULT 'login'
         );
 
         -- Ensure login_path column exists for older installations

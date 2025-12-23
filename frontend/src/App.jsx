@@ -91,7 +91,9 @@ function App() {
     })
   }
 
-  const API_BASE = 'http://localhost:3001/api'
+  // 使用相对路径，浏览器会自动拼接当前域名
+  // 例如：访问 https://nav.blacknico.com/api/links
+  const API_BASE = '/api'
   const scrollRef = React.useRef(null)
 
   // Theme Sync
