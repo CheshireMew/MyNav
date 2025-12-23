@@ -4,6 +4,10 @@
   <img src="image.png" alt="MyNav首页" width="600">
 </p>
 
+<p align="center">
+  <a href="https://nav.blacknico.com/" target="_blank">🌐 在线演示</a>
+</p>
+
 > 一个现代化的个人导航网站,支持自动抓取网站元数据、分类管理、暗黑模式,助您打造个性化的上网入口。
 
 ## ✨ 特性
