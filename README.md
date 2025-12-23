@@ -60,8 +60,23 @@ npm install
 
 3. **配置环境变量**
 ```bash
+cd server
 cp .env.example .env
-# 编辑.env文件,修改JWT_SECRET为随机字符串
+```
+
+**修改JWT密钥** (重要!):
+
+打开 `.env` 文件,替换 `JWT_SECRET` 的值:
+
+```bash
+# 方法1: 在线工具生成
+# 访问 https://randomkeygen.com/ 复制一个"Fort Knox Passwords"
+
+# 方法2: PowerShell生成 (Windows)
+-join ((48..57) + (65..90) + (97..122) | Get-Random -Count 32 | % {[char]$_})
+
+# 方法3: Linux/Mac生成
+openssl rand -base64 32
 ```
 
 4. **启动后端服务**
@@ -153,6 +168,25 @@ docker-compose up -d
 ### 修改设置
 - 点击侧边栏"⚙️"打开管理员设置
 - 可修改用户名、密码、登录路径
+
+### 导入浏览器书签
+
+**查找浏览器书签文件** (隐藏文件):
+
+**Windows**:
+- Chrome: `%LOCALAPPDATA%\Google\Chrome\User Data\Default\Bookmarks`
+- Edge: `%LOCALAPPDATA%\Microsoft\Edge\User Data\Default\Bookmarks`
+
+**macOS**:
+- Chrome: `~/Library/Application Support/Google/Chrome/Default/Bookmarks`
+- Edge: `~/Library/Application Support/Microsoft Edge/Default/Bookmarks`
+
+**Linux**:
+- Chrome: `~/.config/google-chrome/Default/Bookmarks`
+
+复制书签文件到项目目录,然后在"数据导入导出"中导入即可。
+
+> 💡 **提示**: 也可以使用项目自带的 `test-bookmarks.json` 作为示例
 
 ---
 
