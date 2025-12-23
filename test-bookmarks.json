@@ -1,0 +1,131 @@
+{
+    "checksum": "test123456",
+    "roots": {
+        "bookmark_bar": {
+            "children": [
+                {
+                    "date_added": "13293473835030259",
+                    "guid": "test-url-1",
+                    "id": "1",
+                    "name": "Google",
+                    "type": "url",
+                    "url": "https://www.google.com/"
+                },
+                {
+                    "date_added": "13293473835030260",
+                    "guid": "test-url-2",
+                    "id": "2",
+                    "name": "GitHub",
+                    "type": "url",
+                    "url": "https://github.com/"
+                },
+                {
+                    "children": [
+                        {
+                            "date_added": "13293473835030261",
+                            "guid": "test-url-3",
+                            "id": "3",
+                            "name": "深潮TechFlow",
+                            "type": "url",
+                            "url": "https://www.techflowpost.com/"
+                        },
+                        {
+                            "date_added": "13293473835030262",
+                            "guid": "test-url-4",
+                            "id": "4",
+                            "name": "Binance公告",
+                            "type": "url",
+                            "url": "https://www.binance.com/zh-CN/support/announcement"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "date_added": "13293473835030263",
+                                    "guid": "test-url-5",
+                                    "id": "5",
+                                    "name": "CoinCarp",
+                                    "type": "url",
+                                    "url": "https://www.coincarp.com/zh/"
+                                },
+                                {
+                                    "date_added": "13293473835030264",
+                                    "guid": "test-url-6",
+                                    "id": "6",
+                                    "name": "Token Terminal",
+                                    "type": "url",
+                                    "url": "https://tokenterminal.com/"
+                                }
+                            ],
+                            "date_added": "13293473835030265",
+                            "guid": "test-folder-2",
+                            "id": "7",
+                            "name": "数据工具",
+                            "type": "folder"
+                        },
+                        {
+                            "children": [
+                                {
+                                    "date_added": "13293473835030266",
+                                    "guid": "test-url-7",
+                                    "id": "8",
+                                    "name": "Decrypt",
+                                    "type": "url",
+                                    "url": "https://decrypt.co/"
+                                }
+                            ],
+                            "date_added": "13293473835030267",
+                            "guid": "test-folder-3",
+                            "id": "9",
+                            "name": "英文资讯",
+                            "type": "folder"
+                        }
+                    ],
+                    "date_added": "13293473835030268",
+                    "guid": "test-folder-1",
+                    "id": "10",
+                    "name": "加密信息源",
+                    "type": "folder"
+                },
+                {
+                    "children": [
+                        {
+                            "date_added": "13293473835030269",
+                            "guid": "test-url-8",
+                            "id": "11",
+                            "name": "ChatGPT",
+                            "type": "url",
+                            "url": "https://chat.openai.com/"
+                        },
+                        {
+                            "date_added": "13293473835030270",
+                            "guid": "test-url-9",
+                            "id": "12",
+                            "name": "Claude",
+                            "type": "url",
+                            "url": "https://claude.ai/"
+                        }
+                    ],
+                    "date_added": "13293473835030271",
+                    "guid": "test-folder-4",
+                    "id": "13",
+                    "name": "AI工具",
+                    "type": "folder"
+                },
+                {
+                    "date_added": "13293473835030272",
+                    "guid": "test-url-10",
+                    "id": "14",
+                    "name": "YouTube",
+                    "type": "url",
+                    "url": "https://youtube.com/"
+                }
+            ],
+            "date_added": "13293473835030273",
+            "guid": "bookmark_bar_root",
+            "id": "15",
+            "name": "书签栏",
+            "type": "folder"
+        }
+    },
+    "version": 1
+}
