@@ -130,7 +130,7 @@ async function setupDb() {
             console.log('Single-user enforcement: only kept primary user');
         } else if (users.length === 0) {
             // No users exist, create default
-            await db.run("INSERT INTO users (username, password, login_path) VALUES ('admin', 'admin123', 'nibeigaile')");
+            await db.run("INSERT INTO users (username, password, login_path) VALUES ('admin', 'admin123', 'login')");
             console.log('Created default admin user');
         }
     } catch (err) {
