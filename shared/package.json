@@ -1,0 +1,12 @@
+{
+  "name": "@mynav/shared",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./category": "./category.mjs",
+    "./icon": "./icon.mjs",
+    "./siteConfig": "./siteConfig.mjs",
+    "./urlMetadata": "./urlMetadata.mjs"
+  }
+}

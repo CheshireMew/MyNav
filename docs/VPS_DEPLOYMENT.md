@@ -42,15 +42,15 @@ ssh root@你的VPS_IP
 sudo apt update && sudo apt upgrade -y
 ```
 
-### 2.3 安装Node.js (v20 LTS)
+### 2.3 安装Node.js (v24)
 ```bash
 # 安装nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 source ~/.bashrc
 
 # 安装Node.js
-nvm install 20
-nvm use 20
+nvm install 24
+nvm use 24
 
 # 验证
 node -v && npm -v
@@ -153,6 +153,10 @@ server {
     
     location /sitemap.xml {
         proxy_pass http://localhost:3001/sitemap.xml;
+    }
+
+    location /robots.txt {
+        proxy_pass http://localhost:3001/robots.txt;
     }
 }
 ```
@@ -330,8 +334,7 @@ pm2 logs mynav-server
 **检查**:
 ```bash
 # 后端数据库
-sqlite3 /var/www/MyNav/server/database.sqlite
-SELECT login_path FROM users;
+node -e "const { DatabaseSync } = require('node:sqlite'); const db = new DatabaseSync('/var/www/MyNav/server/database.sqlite'); console.log(db.prepare('SELECT login_path FROM users').all())"
 ```
 
 ---

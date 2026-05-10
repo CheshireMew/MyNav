@@ -1,6 +1,8 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
 const { URL } = require('url');
+const { iconFromText } = require('@mynav/shared/icon');
+const { requiredText } = require('./text');
 
 // Helper function to validate icon URL
 async function validateIconUrl(iconUrl) {
@@ -19,6 +21,8 @@ async function validateIconUrl(iconUrl) {
 }
 
 async function scrapeMetadata(targetUrl) {
+    targetUrl = requiredText(targetUrl, 'URL is required');
+
     // URL Protocol Auto-completion
     if (!targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
         targetUrl = 'https://' + targetUrl;
@@ -59,7 +63,7 @@ async function scrapeMetadata(targetUrl) {
         return {
             title: title.trim(),
             description: description.trim(),
-            icon: icon
+            icon: iconFromText(icon)
         };
     } catch (error) {
         console.error(`Error scraping ${targetUrl}:`, error.message);
@@ -81,14 +85,14 @@ async function scrapeMetadata(targetUrl) {
             return {
                 title: title,
                 description: targetUrl,
-                icon: faviconUrl
+                icon: iconFromText(faviconUrl)
             };
         } catch (urlError) {
             // If even URL parsing fails, return empty
             return {
                 title: '',
                 description: '',
-                icon: ''
+                icon: iconFromText('')
             };
         }
     }

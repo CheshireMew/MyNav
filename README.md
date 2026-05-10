@@ -53,7 +53,7 @@
 
 ### 前置要求
 
-- Node.js >= 16
+- Node.js >= 24
 - npm 或 yarn
 
 ### 安装步骤
@@ -141,6 +141,14 @@ server {
     # 后端API代理
     location /api {
         proxy_pass http://localhost:3001;
+    }
+
+    location /sitemap.xml {
+        proxy_pass http://localhost:3001/sitemap.xml;
+    }
+
+    location /robots.txt {
+        proxy_pass http://localhost:3001/robots.txt;
     }
 }
 ```
